@@ -16,7 +16,8 @@ export default defineConfig({
           return '[name][extname]';
         }
       }
-    }
+    },
+    assetsInlineLimit: 0 // Ensure all assets are copied
   },
   server: {
     fs: {
