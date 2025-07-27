@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
+  base: './', // Ensure all paths in the generated HTML are relative
   build: {
     outDir: 'docs', // dist を docs に設定
     rollupOptions: {
