@@ -4,10 +4,11 @@ BVMap プロジェクトは、国土地理院最適化ベクトルタイルを�
 
 ## プロジェクトの背景
 
-- 国土地理院最適化ベクトルタイルは、以下の方法でホストされています：
-  - [PMTiles に直接アクセス](https://tunnel.optgeo.org/bvmap.pmtiles)
+- 国土地理院最適化ベクトルタイルは、x-24b プロジェクトによって以下の方法でホストされています：
+  - pmtiles ファイルへの直接アクセス: `https://tunnel.optgeo.org/bvmap.pmtiles`
   - [TileJSON を介したアクセス](https://tunnel.optgeo.org/martin/bvmap)
-- このプロジェクトでは、これらのタイルを利用してウェブ地図を構築します。
+- x-24b プロジェクトは、国土地理院のベクトルタイルを効率的に配信するための取り組みであり、PMTiles フォーマットを活用して高速かつスケーラブルな配信を実現しています。
+- このプロジェクトでは、その TileJSON を利用してウェブ地図を構築します。
 
 ## 主な機能
 
@@ -71,6 +72,8 @@ bvmap/
 - [MapLibre GL JS](https://maplibre.org/)
 - [Vite](https://vitejs.dev/)
 - [PMTiles](https://github.com/protomaps/PMTiles)
+- [x-24b プロジェクト](https://github.com/unvt/x-24b)
+- [技術的な背景と思想](.github/copilot-instructions.md)
 
 ## 謝辞
 

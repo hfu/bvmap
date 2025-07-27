@@ -2,13 +2,15 @@ import maplibregl from 'maplibre-gl';
 
 const urlParams = new URLSearchParams(window.location.search);
 const styleParam = urlParams.get('style');
-const defaultStyle = styleParam ? `./${styleParam}.json` : './skeleton.json'; // Default to relative path for skeleton.json
+const defaultStyle = styleParam ? `./${styleParam}.json` : './colorful.json'; // Default to relative path for skeleton.json
 
 type MapOptions = {
   container: string;
   style: string;
   center: [number, number];
   zoom: number;
+  minzoom: number;
+  maxzoom: number;
   hash: boolean;
 };
 
@@ -17,6 +19,7 @@ const mapOptions: MapOptions = {
   style: defaultStyle, // Dynamically set style based on URL parameter
   center: [139.6917, 35.6895], // Tokyo
   zoom: 10,
+  minzoom: 4,
   hash: true
 };
 
