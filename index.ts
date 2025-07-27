@@ -37,8 +37,9 @@ map.on('load', () => {
 const styleSwitcher = document.createElement('select');
 styleSwitcher.id = 'styleSwitcher';
 styleSwitcher.innerHTML = `
-  <option value="colorful.json">Colorful</option>
-  <option value="skeleton.json">Skeleton</option>
+  <option value="colorful.json">colorful</option>
+  <option value="skeleton.json">skeleton</option>
+  <option value="std.json">std</option>
 `;
 styleSwitcher.value = styleParam ? `${styleParam}.json` : 'colorful.json'; // Set dropdown to match URL parameter
 
