@@ -11,3 +11,7 @@ serve:
 .PHONY: dev
 dev:
 	vite
+
+.PHONY: style
+style:
+	deno run --allow-read --allow-write generate.ts

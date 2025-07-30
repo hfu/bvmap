@@ -1,6 +1,5 @@
 {
   "version": 8,
-  "name": "optbv",
   "glyphs": "https://gsi-cyberjapan.github.io/optimal_bvmap/glyphs/{fontstack}/{range}.pbf",
   "sprite": "https://gsi-cyberjapan.github.io/optimal_bvmap/sprite/std",
   "sources": {
@@ -78,7 +77,9 @@
       "source-layer": "WRltLine",
       "filter": [
         "==",
-        ["geometry-type"],
+        [
+          "geometry-type"
+        ],
         "Polygon"
       ],
       "paint": {
@@ -93,7 +94,9 @@
       "source-layer": "WRltLine",
       "filter": [
         "==",
-        ["geometry-type"],
+        [
+          "geometry-type"
+        ],
         "LineString"
       ],
       "paint": {
@@ -108,14 +111,19 @@
       "source-layer": "WRltLine",
       "filter": [
         "==",
-        ["geometry-type"],
+        [
+          "geometry-type"
+        ],
         "Point"
       ],
       "layout": {
         "icon-allow-overlap": true,
         "icon-image": "流水方向",
         "icon-size": 1.2,
-        "icon-rotate": ["get", "vt_angle"],
+        "icon-rotate": [
+          "get",
+          "vt_angle"
+        ],
         "icon-rotation-alignment": "map"
       }
     },
@@ -127,8 +135,17 @@
       "minzoom": 17,
       "filter": [
         "in",
-        ["get", "vt_flag17"],
-        ["literal", [1, 2]]
+        [
+          "get",
+          "vt_flag17"
+        ],
+        [
+          "literal",
+          [
+            1,
+            2
+          ]
+        ]
       ],
       "paint": {
         "fill-color": "rgba(0,0,0,0)",
@@ -172,7 +189,10 @@
       "source-layer": "Cntr",
       "filter": [
         "==",
-        ["get", "vt_code"],
+        [
+          "get",
+          "vt_code"
+        ],
         7352
       ],
       "layout": {
@@ -182,9 +202,14 @@
         "text-pitch-alignment": "viewport",
         "text-rotation-alignment": "map",
         "text-size": 10,
-        "text-font": ["NotoSansJP-Regular"],
+        "text-font": [
+          "NotoSansJP-Regular"
+        ],
         "text-max-angle": 360,
-        "text-field": ["get", "vt_alti"]
+        "text-field": [
+          "get",
+          "vt_alti"
+        ]
       },
       "paint": {
         "text-color": "rgba(0,0,0,1)"
@@ -207,7 +232,10 @@
       "source-layer": "Isbt",
       "filter": [
         "==",
-        ["get", "vt_code"],
+        [
+          "get",
+          "vt_code"
+        ],
         7372
       ],
       "layout": {
@@ -217,9 +245,14 @@
         "text-pitch-alignment": "viewport",
         "text-rotation-alignment": "map",
         "text-size": 13,
-        "text-font": ["NotoSansJP-Regular"],
+        "text-font": [
+          "NotoSansJP-Regular"
+        ],
         "text-max-angle": 360,
-        "text-field": ["get", "vt_depth"]
+        "text-field": [
+          "get",
+          "vt_depth"
+        ]
       },
       "paint": {
         "text-color": "rgba(0,0,0,1)"
@@ -253,8 +286,27 @@
       "maxzoom": 17,
       "filter": [
         "any",
-        ["!", ["has", "vt_flag17"]],
-        ["in", ["get", "vt_flag17"], ["literal", [0, 1]]]
+        [
+          "!",
+          [
+            "has",
+            "vt_flag17"
+          ]
+        ],
+        [
+          "in",
+          [
+            "get",
+            "vt_flag17"
+          ],
+          [
+            "literal",
+            [
+              0,
+              1
+            ]
+          ]
+        ]
       ],
       "paint": {
         "line-color": "rgba(0,0,0,1)",
@@ -268,7 +320,18 @@
       "source-layer": "WStrL",
       "minzoom": 17,
       "filter": [
-        "in", ["get", "vt_flag17"], ["literal", [1, 2]]
+        "in",
+        [
+          "get",
+          "vt_flag17"
+        ],
+        [
+          "literal",
+          [
+            1,
+            2
+          ]
+        ]
       ],
       "paint": {
         "line-color": "rgba(0,0,0,1)",
@@ -294,7 +357,20 @@
       "minzoom": 17,
       "filter": [
         "all",
-        ["in", ["get", "vt_flag17"], ["literal", [1, 2]]]
+        [
+          "in",
+          [
+            "get",
+            "vt_flag17"
+          ],
+          [
+            "literal",
+            [
+              1,
+              2
+            ]
+          ]
+        ]
       ],
       "paint": {
         "line-color": "rgba(0,0,0,1)",
@@ -320,7 +396,20 @@
       "minzoom": 17,
       "filter": [
         "all",
-        ["in", ["get", "vt_flag17"], ["literal", [1, 2]]]
+        [
+          "in",
+          [
+            "get",
+            "vt_flag17"
+          ],
+          [
+            "literal",
+            [
+              1,
+              2
+            ]
+          ]
+        ]
       ],
       "paint": {
         "line-color": "rgba(0,0,0,1)",
@@ -366,7 +455,10 @@
       "source": "v",
       "source-layer": "RailTrCL",
       "layout": {
-        "line-sort-key": ["get", "vt_drworder"]
+        "line-sort-key": [
+          "get",
+          "vt_drworder"
+        ]
       },
       "paint": {
         "line-color": "rgba(0,0,0,1)",
@@ -414,5 +506,6 @@
         "line-width": 1
       }
     }
-  ]
+  ],
+  "name": "skeleton"
 }

@@ -1,6 +1,5 @@
 {
   "version": 8,
-  "name": "colorful",
   "glyphs": "https://gsi-cyberjapan.github.io/optimal_bvmap/glyphs/{fontstack}/{range}.pbf",
   "sprite": "https://gsi-cyberjapan.github.io/optimal_bvmap/sprite/std",
   "sources": {
@@ -19,10 +18,10 @@
       "paint": {
         "background-color": [
           "step",
-          ["zoom"],
+          [
+            "zoom"
+          ],
           "#eeeeee",
-          8,
-          "#FFE4B5",
           17,
           "#FFFFFF"
         ]
@@ -34,7 +33,7 @@
       "source": "v",
       "source-layer": "AdmArea",
       "paint": {
-        "fill-color": "rgba(255,255,255,0)"
+        "fill-color": "#eeeeee"
       }
     },
     {
@@ -95,7 +94,9 @@
       "paint": {
         "line-color": [
           "step",
-          ["zoom"],
+          [
+            "zoom"
+          ],
           "#FFD700",
           16,
           "#FFFACD"
@@ -121,10 +122,16 @@
       "paint": {
         "fill-extrusion-color": [
           "interpolate",
-          ["linear"],
-          ["zoom"],
-          12, "#FFE4B5",
-          16, "rgba(200, 200, 200, 1)"
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          12,
+          "#FFE4B5",
+          16,
+          "rgba(200, 200, 200, 1)"
         ],
         "fill-extrusion-height": 3,
         "fill-extrusion-base": 0
@@ -147,7 +154,9 @@
       "source-layer": "WRltLine",
       "filter": [
         "==",
-        ["geometry-type"],
+        [
+          "geometry-type"
+        ],
         "Polygon"
       ],
       "paint": {
@@ -162,7 +171,9 @@
       "source-layer": "WRltLine",
       "filter": [
         "==",
-        ["geometry-type"],
+        [
+          "geometry-type"
+        ],
         "LineString"
       ],
       "paint": {
@@ -177,7 +188,9 @@
       "source-layer": "WRltLine",
       "filter": [
         "==",
-        ["geometry-type"],
+        [
+          "geometry-type"
+        ],
         "Point"
       ],
       "layout": {
@@ -192,7 +205,10 @@
       "source-layer": "Cntr",
       "filter": [
         "==",
-        ["get", "vt_code"],
+        [
+          "get",
+          "vt_code"
+        ],
         7352
       ],
       "layout": {
@@ -206,7 +222,10 @@
           "NotoSansJP-Regular"
         ],
         "text-max-angle": 360,
-        "text-field": ["get", "vt_alti"]
+        "text-field": [
+          "get",
+          "vt_alti"
+        ]
       },
       "paint": {
         "text-color": "rgba(0,0,0,1)"
@@ -436,5 +455,6 @@
         "line-width": 1
       }
     }
-  ]
+  ],
+  "name": "colorful"
 }

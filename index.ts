@@ -10,7 +10,7 @@ type MapOptions = {
   center: [number, number];
   zoom: number;
   minzoom: number;
-  maxzoom: number;
+  maxzoom?: number;
   hash: boolean;
 };
 
@@ -20,6 +20,7 @@ const mapOptions: MapOptions = {
   center: [139.6917, 35.6895], // Tokyo
   zoom: 10,
   minzoom: 4,
+  maxzoom: 18,
   hash: true
 };
 
@@ -62,19 +63,29 @@ styleSwitcher.style.zIndex = '1000';
 
 document.body.appendChild(styleSwitcher);
 
+// マップクリック時に属性を吹き出し表示（optgeo/openmaptiles と同様の形式）
 map.on('click', (event) => {
   const features = map.queryRenderedFeatures(event.point);
-  if (features.length) {
+  if (features.length > 0) {
     const popupContent = features.map((feature) => {
-      const sourceLayer = feature.layer['source-layer'];
+      const layerId = feature.layer.id;
+      const sourceLayer = (feature.layer as any)['source-layer'];
       const properties = JSON.stringify(feature.properties, null, 2);
-      return `<pre>${sourceLayer}\n${properties}</pre>`;
-    }).join('<hr>');
+      
+      return `<div style="margin-bottom: 10px;">
+        <strong style="color: #0066cc;">${layerId}</strong>
+        ${sourceLayer ? `<br><small style="color: #666;">Source: ${sourceLayer}</small>` : ''}
+        <pre style="background: #f5f5f5; padding: 8px; margin: 4px 0; border-radius: 4px; font-size: 11px; overflow-x: auto;">${properties}</pre>
+      </div>`;
+    }).join('<hr style="margin: 8px 0; border: none; border-top: 1px solid #ddd;">');
 
-    // Create a popup
-    new maplibregl.Popup()
+    // Create a popup with improved styling
+    new maplibregl.Popup({ 
+      closeOnClick: true,
+      maxWidth: '400px'
+    })
       .setLngLat(event.lngLat)
-      .setHTML(popupContent)
+      .setHTML(`<div style="max-height: 300px; overflow-y: auto;">${popupContent}</div>`)
       .addTo(map);
   }
 });
